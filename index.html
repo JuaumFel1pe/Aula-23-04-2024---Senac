@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+
+        <div>
+            <label>Usuário </label>
+            <input type="text" id="user" name="username" required="">
+        </div>
+        <div>
+            <label>Senha:</label>
+            <input type="password" id="senha" name="password" required="">
+        </div>
+        <div>
+            <a href="/esqueciSenha.html">Esqueci minha senha</a>
+        </div>
+        <div>
+            <button type="submit" id="btnEntrar" onclick="FormularioLogin()">Entrar</button>
+            <br>
+            <button id="limpaCampos" onclick="limpaCampos()">Limpa campos</button>
+        </div>
+            <button onclick="AumentarNum()">Aumenta</button>
+            <h1 id="numero">0</h1>
+
+
+        <script>
+            function FormularioLogin(){
+                let user = document.getElementById('user').value;
+                let senha = document.getElementById('senha').value
+                let senhaCerta = '96053'
+
+                if(user == senha){
+                    alert('Não se pode colocar o mesmo usuário para a senha.')
+                }
+                else if(user == 'senacsp' && senha == senhaCerta){ 
+                    alert('Seja bem-vindo!')
+                    window.location.href='index2.html'
+                }
+                else if(user == 'senacsp' && senhaCerta.includes(senha)){
+                    alert('Apenas um teste usando a função "includes()"')
+                }
+                else if(user == 'senacsp'){
+                    alert('Usuário está certo, mas a senha não.')
+                }
+                else(
+                    alert('Senha ou e-mail incorreto')
+                )
+            }
+
+            function AumentarNum(){
+                let n = Number(document.getElementById('numero').innerText) 
+                
+                n++
+
+                document.querySelector('#numero').innerHTML = n
+            }
+
+            function limpaCampos(){
+                let user = document.getElementById('user').value
+                let senha = document.getElementById('senha').value
+
+                user = ''
+                senha = ''
+            }
+        </script>
+</body>
+</html>

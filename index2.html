@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+</head>
+<body>
+    
+        <label for="numero1">valor 1</label>
+        <input type="number" id="numero1" name="numero1">
+
+        <label for="numero2">valor 2</label>
+        <input type="number" id="numero2" name="numero2">
+
+        <button onclick="soma()">soma</button>
+
+        <h1 id="result">0</h1>
+    
+
+    <script>
+        function soma(){
+            let num1 = parseFloat(document.getElementById('numero1').value)
+            let num2 = parseFloat(document.getElementById('numero2').value)
+
+            result = num1 + num2
+
+            document.querySelector('#result').innerHTML = result
+            alert(result)
+        }
+    </script>
+</body>
+</html>
